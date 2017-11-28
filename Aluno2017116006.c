@@ -54,7 +54,7 @@ int q1(char *data){
                 case 6:
                 case 9:
                 case 11:
-                if(dia<1&&dia>30)
+                if(dia<1||dia>30)
                     datavalida = 0;
                 break;
                 case 2:
@@ -64,6 +64,7 @@ int q1(char *data){
                 } else
                 if(dia<1||dia>28)
                     datavalida=0;
+                break;
             }
             else datavalida = 0;
             else datavalida = 0;
@@ -137,10 +138,17 @@ int q2(char *datainicial, char *datafinal, int *qtdDias, int *qtdMeses, int *qtd
     Um número n >= 0. 
  */
 int q3(char *texto, char c, int isCaseSensitive){
-    int qtdOcorrencias = -1;
-    
+    int i;
+    int qtdOcorrencias = 0;
+    if((isCaseSensitive==1) && c>='A' && c<='Z')
+        c+='a'-'A';
+    for(i=0;texto[i];i++){
+        if(texto[i]==c)
+            qtdOcorrencias++;
+        if((isCaseSensitive==1)&&(texto[i]>='A')&&(texto[i]<='Z')&&(texto[i]==(c+'A'-'a')))
+            qtdOcorrencias++;
+    }
     return qtdOcorrencias;
-    
 }
 
 /*
@@ -191,6 +199,6 @@ int q5(int num){
  */
 
 int q6(int numerobase, int numerobusca){
-    int qtdOcorrencias;
-    return qtdOcorrencias;
+    //int qtdOcorrencias;
+    return 0;//qtdOcorrencias;
 }
