@@ -30,12 +30,12 @@ void testQ6();
 
 int main(){
     
-    //testQ1();
+    testQ1();
     testQ2();
-    //testQ3();
-    /*testQ4();
+    testQ3();
+    testQ4();
     testQ5();
-    testQ6();*/
+    testQ6();
 }
 
 void testQ1(){
@@ -133,7 +133,7 @@ void testQ4(){
     for (i = 0; i<30; i++){
         posicoes[i] = -1;
     }
-    strcpy(strTexto,"Olá, o mundo é muito grande. Tem muitas pessoas, e muitos problemas");
+    strcpy(strTexto,"Ola, o mundo e muito grande. Tem muitas pessoas, e muitos problemas");
     strcpy(strBusca,"mui");
     printf("%d\n",q4(strTexto, strBusca, posicoes) == 3);
     printf("%d\n",posicoes[0]==16);
