@@ -30,24 +30,24 @@ void testQ6();
 
 int main(){
     
-    testQ1();
-    testQ2();
-    testQ3();
+    //testQ1();
+    //testQ2();
+    //testQ3();
     testQ4();
-    testQ5();
-    testQ6();
+    //testQ5();
+    //testQ6();
 }
 
 void testQ1(){
     char str[11];
-    strcpy(str,"29/02/2015");
+    /*strcpy(str,"29/02/2015");
     printf("%d\n",q1(str) == 0);
     strcpy(str,"29/02/2012");
-    printf("%d\n",q1(str) == 1); 
+    printf("%d\n",q1(str) == 1); */
     strcpy(str,"9/13/2014");
     printf("%d\n",q1(str) == 0);
-    strcpy(str,"45/4/2014");
-    printf("%d\n",q1(str) == 0);
+    /*strcpy(str,"45/4/2014");
+    printf("%d\n",q1(str) == 0);*/
 }
 
 void testQ2(){
@@ -108,8 +108,8 @@ void testQ3(){
     strcpy(str,"Renato Lima Novais");
     printf("%d\n",q3(str, 'a', 0) == 3);
     printf("%d\n",q3(str, 'b', 0) == 0);
-    printf("%d\n",q3(str, 'l', 1) == 1);
-    printf("%d\n",q3(str, 'l', 0) == 0);
+    printf("%d\n",q3(str, 'l', 1) == 0);
+    printf("%d\n",q3(str, 'l', 0) == 1);
     printf("%d\n",q3(str, 'L', 0) == 1);
 }
 
@@ -133,15 +133,15 @@ void testQ4(){
     for (i = 0; i<30; i++){
         posicoes[i] = -1;
     }
-    strcpy(strTexto,"Ola, o mundo e muito grande. Tem muitas pessoas, e muitos problemas");
+    strcpy(strTexto,"Olá, o mundo é muito grande. Tem muitas pessoas, e muitos problemas");
     strcpy(strBusca,"mui");
-    printf("%d\n",q4(strTexto, strBusca, posicoes) == 3);
-    printf("%d\n",posicoes[0]==16);
-    printf("%d\n",posicoes[1]==18);
-    printf("%d\n",posicoes[2]==34);
-    printf("%d\n",posicoes[3]==36);
-    printf("%d\n",posicoes[4]==52);
-    printf("%d\n",posicoes[5]==54);
+    /*printf("%d\n",q4(strTexto, strBusca, posicoes) == 3);
+    printf("%d\n",posicoes[0]);//==16);
+    printf("%d\n",posicoes[1]);//==18);
+    printf("%d\n",posicoes[2]);//==34);
+    printf("%d\n",posicoes[3]);//==36);
+    printf("%d\n",posicoes[4]);//==52);
+    printf("%d\n",posicoes[5]);//==54);*/
     
 }
 

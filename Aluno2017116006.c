@@ -23,6 +23,19 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <locale.h>
+void locale(){
+printf("\n****** Verificando a localidade corrente ********\n\n");
+ printf ("Localidade corrente: %s\n", setlocale(LC_ALL,NULL) );
+ printf("Não é possível usar acentuação ou ç corretamente...\n\n");
+ 
+ printf("\n****** Alterando para a localidade do sistema ********\n\n");
+ 
+ //alterando para o padrão do sistema operacional
+ printf("A localidade corrente agora é %s \n",setlocale(LC_ALL,""));
+ printf("Agora não tem mais problema algum!\n");
+ printf("Já posso usar acentuação e também o caracter ç...\n\n\n");
+}
 /*
 Q1 = validar data
 @objetivo
@@ -133,12 +146,12 @@ Um número n >= 0.
 int q3(char *texto, char c, int isCaseSensitive){
     int i;
     int qtdOcorrencias = 0;
-    if((isCaseSensitive==1) && c>='A' && c<='Z')
+    if((isCaseSensitive==0) && c>='A' && c<='Z')
         c+='a'-'A';
     for(i=0;texto[i];i++){
         if(texto[i]==c)
             qtdOcorrencias++;
-        if((isCaseSensitive==1)&&(texto[i]>='A')&&(texto[i]<='Z')&&(texto[i]==(c+'A'-'a')))
+        if((isCaseSensitive==0)&&(texto[i]>='A')&&(texto[i]<='Z')&&(texto[i]==(c+'A'-'a')))
             qtdOcorrencias++;
     }
     return qtdOcorrencias;
@@ -160,6 +173,9 @@ O retorno da função, n, nesse caso seria 1;
 
 */
 int q4(char *strTexto, char *strBusca, int posicoes[30]){
+    locale();
+    for(int i=0;strTexto[i];i++)printf("[%d]:%c=%d\t\t",i,strTexto[i],strTexto[i]);
+        puts("");
     int qtdOcorrencias=-1;
     int iTexto, achou, iBusca, inicio;
     iTexto = achou = 0;
